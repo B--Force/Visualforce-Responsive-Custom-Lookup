@@ -1,0 +1,99 @@
+<apex:page standardStylesheets="false" docType="html-5.0" sidebar="false" showHeader="false">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"/>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+    var __sfdcSessionId = '{!GETSESSIONID()}';
+    </script>
+    
+    
+    <script src="../../soap/ajax/30.0/connection.js" type="text/javascript"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{!$Resource.BlookUp}"></script>
+    <script>
+    
+    $( document ).ready(function() {
+    
+        $( "#acclookup" ).bLookup({sObject:"Account",sessionId:__sfdcSessionId});
+        $( "#conlookup" ).bLookup({sObject:"Contact",sessionId:__sfdcSessionId});
+        $( "#ldlookup" ).bLookup({sObject:"Lead",sessionId:__sfdcSessionId});
+        $( "#opplookup" ).bLookup({sObject:"Opportunity",sessionId:__sfdcSessionId});
+        $( "#userlookup" ).bLookup({sObject:"User",sessionId:__sfdcSessionId});
+        $( "#caselookup" ).bLookup({sObject:"Case",sessionId:__sfdcSessionId});
+       
+    });
+    </script>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    
+    <div class="panel panel-primary">
+        <div class="panel-heading">Custom Lookup Section</div>
+        <div class="panel-body">
+            <label>Account</label>
+            <div class="right-inner-addon" id="acclookup">
+                <i class="icon-search"></i>
+                <input type="search" id="sourceText"
+                class="form-control" 
+                placeholder="Search" />
+                <span id="selectRec" style="display:none;"></span>
+            </div>
+            <br/>
+            <label>Contact</label>
+            <div class="right-inner-addon" id="conlookup">
+                <i class="icon-search"></i>
+                <input type="search" id="sourcText"
+                class="form-control" 
+                placeholder="Search" />
+                <span id="selRec" style="display:none;"></span>
+            </div>
+            <br/>
+            <label>Lead</label>
+            <div class="right-inner-addon" id="ldlookup">
+                <i class="icon-search"></i>
+                <input type="search" id="ldText"
+                class="form-control" 
+                placeholder="Search" />
+                <span id="ldRec" style="display:none;"></span>
+            </div>
+            <br/>
+            <label>Opportunity</label>
+            <div class="right-inner-addon" id="opplookup">
+                <i class="icon-search"></i>
+                <input type="search" id="oppText"
+                class="form-control" 
+                placeholder="Search" />
+                <span id="oppRec" style="display:none;"></span>
+            </div>
+            <br/>
+            <label>Case</label>
+            <div class="right-inner-addon" id="caselookup">
+                <i class="icon-search"></i>
+                <input type="search" id="caseText"
+                class="form-control" 
+                placeholder="Search" />
+                <span id="caseRec" style="display:none;"></span>
+            </div>
+            
+            
+            <br/>
+            <label>User</label>
+            <div class="right-inner-addon" id="userlookup">
+                <i class="icon-search"></i>
+                <input type="search" id="userText"
+                class="form-control" 
+                placeholder="Search" />
+                <span id="userRec" style="display:none;"></span>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+</apex:page>
